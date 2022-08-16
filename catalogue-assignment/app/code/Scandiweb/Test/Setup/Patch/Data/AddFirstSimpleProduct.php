@@ -147,12 +147,11 @@ class AddFirstSimpleProduct implements DataPatchInterface
             ->setVisibility(Visibility::VISIBILITY_BOTH)
             ->setStatus(Status::STATUS_ENABLED)
             ->setStockData(
-                array(
-                    'use_config_manage_stock' => 0,
+                [
                     'manage_stock' => 1,
                     'is_in_stock' => 1,
                     'qty' => 1000
-                )
+                ]
             );
 
         $product = $this->productRepository->save($product);
