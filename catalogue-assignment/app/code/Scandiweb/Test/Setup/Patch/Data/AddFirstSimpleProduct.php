@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 declare(strict_types=1);
 namespace Scandiweb\Test\Setup\Patch\Data;
@@ -118,7 +118,7 @@ class AddFirstSimpleProduct implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
-    public function apply()
+    public function apply() : void
     {
         $this->appState->emulateAreaCode('adminhtml', [$this, 'execute']);
     }
@@ -128,7 +128,7 @@ class AddFirstSimpleProduct implements DataPatchInterface
      *
      * @return void
      */
-    public function execute()
+    public function execute() : void
     {
         $product = $this->productInterfaceFactory->create();
         $productSKU = 'TST001';
@@ -167,7 +167,7 @@ class AddFirstSimpleProduct implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
-    public static function getDependencies()
+    public static function getDependencies() : array
     {
         return [];
     }
@@ -175,7 +175,7 @@ class AddFirstSimpleProduct implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
-    public function getAliases()
+    public function getAliases() : array
     {
         return [];
     }
